@@ -123,7 +123,7 @@ export default function ComplexDetail() {
           {/* Map placeholder */}
           <section className="mt-12">
             <h2 className="font-display text-3xl">На карте</h2>
-            <div className="mt-5 rounded-2xl overflow-hidden bg-gradient-sand h-72 grid place-items-center border border-border/60">
+            <div className="mt-5 rounded-2xl overflow-hidden bg-secondary h-72 grid place-items-center border border-border/60">
               <div className="text-center text-muted-foreground">
                 <MapPin className="w-10 h-10 mx-auto mb-2 text-gold" />
                 <div className="font-medium text-foreground">{c.district}, Анапа</div>

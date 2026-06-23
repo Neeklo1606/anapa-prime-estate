@@ -25,7 +25,7 @@ export default function About() {
         <div className="absolute inset-0 bg-gradient-hero" />
         <div className="container-x relative h-full flex flex-col justify-end pb-12 text-primary-foreground">
           <div className="eyebrow text-primary-foreground/60">О компании</div>
-          <h1 className="mt-2 font-display text-5xl lg:text-7xl leading-tight">Югэксэнд</h1>
+          <h1 className="mt-2 font-display text-5xl lg:text-7xl leading-tight">ЮГАКЦЕНТ</h1>
           <p className="mt-4 text-lg max-w-2xl text-primary-foreground/85">Агентство недвижимости в Анапе. С 2017 года помогаем находить дом, инвестицию или второй вариант для отдыха.</p>
         </div>
       </section>
@@ -34,12 +34,12 @@ export default function About() {
         <div>
           <div className="eyebrow">Наша история</div>
           <h2 className="mt-2 font-display text-4xl">8 лет на рынке Анапы</h2>
-          <p className="mt-5 text-muted-foreground leading-relaxed">Мы начинали с одного офиса и трёх экспертов. Сегодня «Югэксэнд» — это команда из 18 специалистов, эксклюзивные договоры с 24 застройщиками и более 2300 закрытых сделок.</p>
+          <p className="mt-5 text-muted-foreground leading-relaxed">Мы начинали с одного офиса и трёх экспертов. Сегодня «ЮГАКЦЕНТ» — это команда из 18 специалистов, эксклюзивные договоры с 24 застройщиками и более 2300 закрытых сделок.</p>
           <p className="mt-3 text-muted-foreground leading-relaxed">Мы знаем каждый ЖК Анапы, каждого застройщика и все нюансы — от планировок до особенностей грунтов и розы ветров. Это даёт нашим клиентам уверенность в выборе.</p>
         </div>
         <div className="grid grid-cols-2 gap-4">
           {[{ n: "2017", l: "год основания" }, { n: "2300+", l: "сделок" }, { n: "18", l: "экспертов" }, { n: "24", l: "застройщика" }].map(s => (
-            <div key={s.l} className="bg-gradient-sand rounded-2xl p-6">
+            <div key={s.l} className="bg-secondary rounded-2xl p-6">
               <div className="font-display text-4xl lg:text-5xl">{s.n}</div>
               <div className="text-sm text-muted-foreground mt-1 uppercase tracking-wider">{s.l}</div>
             </div>
@@ -69,14 +69,14 @@ export default function About() {
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map(s => (
             <div key={s.n} className="card-premium p-6">
-              <div className="font-display text-5xl gold-text">{s.n}</div>
+              <div className="font-display text-5xl text-[hsl(var(--brand))]">{s.n}</div>
               <div className="mt-3 font-medium text-lg">{s.t}</div>
               <div className="text-sm text-muted-foreground mt-2">{s.d}</div>
             </div>
           ))}
         </div>
 
-        <div className="mt-12 bg-gradient-sand rounded-2xl p-10 lg:p-14 text-center">
+        <div className="mt-12 bg-secondary rounded-2xl p-10 lg:p-14 text-center">
           <h3 className="font-display text-3xl lg:text-4xl">Готовы помочь с подбором</h3>
           <p className="mt-3 text-muted-foreground max-w-xl mx-auto">Расскажите о задаче — пришлём подборку и сравнительный анализ.</p>
           <Button asChild size="lg" className="mt-6 bg-primary"><Link to="/contacts">Связаться с нами</Link></Button>

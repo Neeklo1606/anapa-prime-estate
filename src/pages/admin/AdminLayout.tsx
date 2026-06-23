@@ -27,7 +27,7 @@ export default function AdminLayout() {
           {!collapsed && (
             <Link to="/" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded bg-gold text-gold-foreground grid place-items-center font-display text-lg">Ю</div>
-              <span className="font-display text-lg">Югэксэнд</span>
+              <span className="font-display text-lg">ЮГАКЦЕНТ</span>
             </Link>
           )}
           <button onClick={() => setCollapsed(c => !c)} className="p-2 rounded hover:bg-sidebar-accent">
