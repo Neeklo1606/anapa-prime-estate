@@ -13,6 +13,7 @@ import News from "@/pages/News";
 import NewsDetail from "@/pages/NewsDetail";
 import About from "@/pages/About";
 import Contacts from "@/pages/Contacts";
+import Analytics from "@/pages/Analytics";
 import NotFound from "@/pages/NotFound";
 
 import AdminLayout from "@/pages/admin/AdminLayout";
@@ -23,6 +24,11 @@ import AdminNews from "@/pages/admin/AdminNews";
 import AdminLeads from "@/pages/admin/AdminLeads";
 import AdminChats from "@/pages/admin/AdminChats";
 import AdminIntegrations from "@/pages/admin/AdminIntegrations";
+import AdminAI from "@/pages/admin/AdminAI";
+import AdminCRM from "@/pages/admin/AdminCRM";
+import AdminDeals from "@/pages/admin/AdminDeals";
+import AdminKnowledge from "@/pages/admin/AdminKnowledge";
+import AdminFinance from "@/pages/admin/AdminFinance";
 
 const queryClient = new QueryClient();
 
@@ -40,17 +46,24 @@ const App = () => (
             <Route path="/properties/:id" element={<PropertyDetail />} />
             <Route path="/news" element={<News />} />
             <Route path="/news/:id" element={<NewsDetail />} />
+            <Route path="/analytics" element={<Analytics />} />
             <Route path="/about" element={<About />} />
             <Route path="/contacts" element={<Contacts />} />
           </Route>
 
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminDashboard />} />
+            <Route path="analytics" element={<AdminDashboard />} />
+            <Route path="crm" element={<AdminCRM />} />
+            <Route path="deals" element={<AdminDeals />} />
             <Route path="properties" element={<AdminProperties />} />
             <Route path="complexes" element={<AdminComplexes />} />
             <Route path="news" element={<AdminNews />} />
             <Route path="leads" element={<AdminLeads />} />
             <Route path="chats" element={<AdminChats />} />
+            <Route path="ai" element={<AdminAI />} />
+            <Route path="knowledge" element={<AdminKnowledge />} />
+            <Route path="finance" element={<AdminFinance />} />
             <Route path="integrations" element={<AdminIntegrations />} />
           </Route>
 
