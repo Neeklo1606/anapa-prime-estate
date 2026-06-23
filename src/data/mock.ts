@@ -1,4 +1,4 @@
-// Mock data for «Югэксэнд» — Anapa real estate platform
+// Mock data for «ЮГАКЦЕНТ» — Anapa real estate platform
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
@@ -260,13 +260,13 @@ export const NEWS: NewsItem[] = [
     seoDescription: "Цены, сделки, лидеры продаж — полный обзор рынка новостроек Анапы за первое полугодие 2026.",
   },
   {
-    id: "n5", slug: "kak-vybrat-zk", title: "Как выбрать ЖК у моря: чек-лист от Югэксэнд",
+    id: "n5", slug: "kak-vybrat-zk", title: "Как выбрать ЖК у моря: чек-лист от ЮГАКЦЕНТ",
     category: "Новостройки", date: "2026-04-30",
     cover: u("photo-1502672260266-1c1ef2d93688"),
     excerpt: "11 пунктов, которые мы проверяем при подборе ЖК у моря для наших клиентов.",
     content: "За 8 лет работы мы составили внутренний чек-лист из 11 критериев, по которым оцениваем каждый ЖК у моря. Делимся им открыто.",
     seoTitle: "Как выбрать ЖК у моря в Анапе — чек-лист",
-    seoDescription: "11 критериев выбора жилого комплекса у моря в Анапе от агентства Югэксэнд.",
+    seoDescription: "11 критериев выбора жилого комплекса у моря в Анапе от агентства ЮГАКЦЕНТ.",
   },
   {
     id: "n6", slug: "ipoteka-stavki", title: "Ключевая ставка снижена: что это значит для покупателей",

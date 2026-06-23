@@ -32,7 +32,7 @@ export default function NewsDetail() {
           {n.content.split("\n\n").map((para, i) => <p key={i} className="leading-relaxed">{para}</p>)}
         </div>
 
-        <div className="mt-12 bg-gradient-sand rounded-2xl p-7 lg:p-10 grid md:grid-cols-2 gap-6 items-center">
+        <div className="mt-12 bg-secondary rounded-2xl p-7 lg:p-10 grid md:grid-cols-2 gap-6 items-center">
           <div>
             <div className="eyebrow">Подбор недвижимости</div>
             <h3 className="mt-2 font-display text-3xl">Поможем выбрать объект</h3>

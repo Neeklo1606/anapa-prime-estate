@@ -41,7 +41,7 @@ export default function Contacts() {
               <a href="#" className="flex-1 h-12 rounded-xl bg-[#A3CD3A] text-white grid place-items-center hover:opacity-90 font-bold">Avito</a>
             </div>
           </div>
-          <div className="rounded-2xl overflow-hidden bg-gradient-sand h-72 grid place-items-center border border-border/60">
+          <div className="rounded-2xl overflow-hidden bg-secondary h-72 grid place-items-center border border-border/60">
             <div className="text-center text-muted-foreground">
               <MapPin className="w-10 h-10 mx-auto mb-2 text-gold" />
               <div className="font-medium text-foreground">Карта офиса</div>

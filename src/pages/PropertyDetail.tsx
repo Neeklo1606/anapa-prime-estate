@@ -75,7 +75,7 @@ export default function PropertyDetail() {
               <p className="mt-4 text-muted-foreground leading-relaxed">{p.description}</p>
             </div>
 
-            <div className="mt-10 bg-gradient-sand rounded-2xl p-7">
+            <div className="mt-10 bg-secondary rounded-2xl p-7">
               <h2 className="font-display text-2xl">Почему стоит рассмотреть</h2>
               <ul className="mt-4 grid sm:grid-cols-2 gap-3">
                 {[
