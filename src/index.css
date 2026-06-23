@@ -6,66 +6,67 @@
 
 @layer base {
   :root {
-    /* PropTech palette — ЮГАКЦЕНТ */
-    --background: 210 40% 98%;       /* #F8FAFC */
-    --foreground: 222 47% 11%;       /* #0F172A */
+    /* PropTech palette — ЮГАКЦЕНТ · Sea */
+    --background: 200 40% 98%;       /* soft sea mist */
+    --foreground: 215 40% 14%;       /* deep navy ink */
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 215 40% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 215 40% 14%;
 
-    /* Deep navy ink */
-    --primary: 222 47% 11%;          /* #0F172A */
+    /* Deep sea ink */
+    --primary: 200 70% 38%;          /* ocean teal-blue */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 200 40% 95%;
+    --secondary-foreground: 215 40% 14%;
 
-    --muted: 214 32% 94%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 200 30% 93%;
+    --muted-foreground: 210 18% 45%;
 
-    /* Indigo accent */
-    --accent: 224 64% 33%;           /* #1E3A8A */
+    /* Aqua accent */
+    --accent: 190 75% 48%;           /* fresh aqua */
     --accent-foreground: 0 0% 100%;
 
-    --brand: 224 64% 33%;
+    --brand: 195 78% 50%;            /* sea cyan */
     --brand-foreground: 0 0% 100%;
-    --brand-soft: 224 76% 96%;
+    --brand-soft: 195 80% 94%;
 
     /* Steel */
-    --steel: 213 27% 84%;            /* #CBD5E1 */
-    --steel-foreground: 222 47% 11%;
+    --steel: 200 30% 84%;
+    --steel-foreground: 215 40% 14%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 160 84% 32%;
+    --success: 168 70% 40%;
     --success-foreground: 0 0% 100%;
     --warning: 38 92% 50%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 224 64% 33%;
+    --border: 200 30% 90%;
+    --input: 200 30% 90%;
+    --ring: 195 78% 50%;
 
     --radius: 0.875rem;
 
-    --sidebar-background: 222 47% 9%;
-    --sidebar-foreground: 213 27% 84%;
-    --sidebar-primary: 224 76% 56%;
+    --sidebar-background: 215 45% 12%;
+    --sidebar-foreground: 200 30% 84%;
+    --sidebar-primary: 195 78% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 222 40% 14%;
+    --sidebar-accent: 215 40% 17%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 222 40% 16%;
-    --sidebar-ring: 224 76% 56%;
+    --sidebar-border: 215 40% 19%;
+    --sidebar-ring: 195 78% 55%;
 
-    --gradient-hero: radial-gradient(1200px 600px at 20% 0%, hsl(224 64% 33% / 0.08), transparent 60%),
-                     radial-gradient(900px 500px at 90% 20%, hsl(222 47% 11% / 0.06), transparent 60%);
-    --gradient-brand: linear-gradient(135deg, hsl(224 64% 33%) 0%, hsl(222 47% 18%) 100%);
-    --gradient-ink: linear-gradient(180deg, hsl(222 47% 11%) 0%, hsl(222 47% 7%) 100%);
-    --gradient-grid: linear-gradient(hsl(214 32% 91% / 0.6) 1px, transparent 1px),
-                     linear-gradient(90deg, hsl(214 32% 91% / 0.6) 1px, transparent 1px);
+    --gradient-hero: radial-gradient(1200px 600px at 20% 0%, hsl(195 78% 50% / 0.10), transparent 60%),
+                     radial-gradient(900px 500px at 90% 20%, hsl(200 70% 38% / 0.08), transparent 60%);
+    --gradient-brand: linear-gradient(135deg, hsl(195 80% 55%) 0%, hsl(205 75% 42%) 100%);
+    --gradient-ink: linear-gradient(180deg, hsl(215 45% 14%) 0%, hsl(215 50% 9%) 100%);
+    --gradient-grid: linear-gradient(hsl(200 30% 90% / 0.6) 1px, transparent 1px),
+                     linear-gradient(90deg, hsl(200 30% 90% / 0.6) 1px, transparent 1px);
+
 
     --shadow-xs: 0 1px 2px hsl(222 47% 11% / 0.04);
     --shadow-sm: 0 1px 2px hsl(222 47% 11% / 0.04), 0 1px 3px hsl(222 47% 11% / 0.06);
