@@ -32,16 +32,16 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 glass border-b border-border/70">
-      <div className="container-x flex h-16 lg:h-[72px] items-center justify-between gap-6">
-        <Link to="/" aria-label="ЮГАКЦЕНТ"><Logo /></Link>
+      <div className="container-x flex h-16 lg:h-[72px] items-center justify-between gap-4">
+        <Link to="/" aria-label="ЮГАКЦЕНТ" className="shrink-0"><Logo /></Link>
 
-        <nav className="hidden lg:flex items-center gap-0.5">
+        <nav className="hidden lg:flex items-center gap-0.5 flex-1 justify-center max-w-2xl">
           {links.map(l => (
             <NavLink
               key={l.to}
               to={l.to}
               className={({ isActive }) =>
-                `px-3.5 py-2 rounded-lg text-[13.5px] font-medium transition-colors ${
+                `px-3 py-2 rounded-lg text-[13px] font-medium whitespace-nowrap transition-colors ${
                   isActive ? "text-foreground bg-secondary" : "text-foreground/60 hover:text-foreground hover:bg-secondary/60"
                 }`
               }
@@ -51,27 +51,29 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-1.5">
-          <div className="hidden xl:flex items-center gap-0.5 mr-1">
-            <a href="https://t.me/ugakcent" target="_blank" rel="noreferrer" aria-label="Telegram"
-              className="w-9 h-9 grid place-items-center rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors">
-              <Send className="w-4 h-4" />
-            </a>
-            <a href="https://wa.me/78001234567" target="_blank" rel="noreferrer" aria-label="WhatsApp"
-              className="w-9 h-9 grid place-items-center rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors">
-              <MessageCircle className="w-4 h-4" />
-            </a>
-            <a href="tel:+78001234567" aria-label="Позвонить"
-              className="h-9 inline-flex items-center gap-1.5 px-2.5 rounded-lg text-[12.5px] font-medium text-foreground/80 hover:bg-secondary transition-colors num">
-              <Phone className="w-3.5 h-3.5" /> +7 800 123-45-67
-            </a>
-          </div>
+        <div className="flex items-center gap-1 shrink-0">
+          <a href="tel:+78001234567" aria-label="Позвонить"
+            className="hidden 2xl:inline-flex h-9 items-center gap-1.5 px-2.5 rounded-lg text-[12.5px] font-medium text-foreground/80 hover:bg-secondary transition-colors num">
+            <Phone className="w-3.5 h-3.5" /> +7 800 123-45-67
+          </a>
+          <a href="tel:+78001234567" aria-label="Позвонить"
+            className="hidden md:inline-flex 2xl:hidden w-9 h-9 items-center justify-center rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors">
+            <Phone className="w-4 h-4" />
+          </a>
+          <a href="https://t.me/ugakcent" target="_blank" rel="noreferrer" aria-label="Telegram"
+            className="hidden md:grid w-9 h-9 place-items-center rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors">
+            <Send className="w-4 h-4" />
+          </a>
+          <a href="https://wa.me/78001234567" target="_blank" rel="noreferrer" aria-label="WhatsApp"
+            className="hidden md:grid w-9 h-9 place-items-center rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors">
+            <MessageCircle className="w-4 h-4" />
+          </a>
 
-          <Link to="/admin" className="hidden md:inline-flex items-center gap-1 text-[12.5px] text-muted-foreground hover:text-foreground transition-colors px-2.5 py-1">
+          <Link to="/admin" className="hidden xl:inline-flex items-center gap-1 text-[12.5px] text-muted-foreground hover:text-foreground transition-colors px-2.5 py-1 ml-1">
             Войти <ArrowUpRight className="w-3 h-3" />
           </Link>
 
-          <Button asChild size="sm" className="hidden sm:inline-flex h-10 px-5 bg-primary hover:bg-primary/90 text-[13px] font-medium rounded-lg shadow-sm">
+          <Button asChild size="sm" className="hidden sm:inline-flex h-10 px-4 lg:px-5 bg-primary hover:bg-primary/90 text-[13px] font-medium rounded-lg shadow-sm ml-1">
             <Link to="/contacts">Подобрать объект</Link>
           </Button>
 
