@@ -65,27 +65,33 @@ export default function PropertyFilter({
   const reset = () => onChange({});
 
   return (
-    <div className={compact ? "" : "surface p-5 lg:p-6 shadow-lg"}>
+    <div className={compact ? "" : "rounded-3xl bg-card border border-border p-5 lg:p-7 shadow-xl"}>
       {/* SEGMENTS */}
-      <div className="flex items-center gap-1 p-1 bg-secondary rounded-xl w-full sm:w-auto sm:inline-flex">
-        {SEGMENTS.map(s => {
-          const active = segment === s.key;
-          return (
-            <button key={s.key} onClick={() => onChange({ ...value, segment: s.key })}
-              className={`flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-3 sm:px-4 h-9 rounded-lg text-[13px] font-medium transition-all ${
-                active ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
-              }`}>
-              <s.icon className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">{s.label}</span>
-            </button>
-          );
-        })}
+      <div className="flex items-center justify-between gap-3 flex-wrap">
+        <div className="flex items-center gap-1 p-1 bg-[hsl(var(--surface-1))] border border-border rounded-xl w-full sm:w-auto sm:inline-flex">
+          {SEGMENTS.map(s => {
+            const active = segment === s.key;
+            return (
+              <button key={s.key} onClick={() => onChange({ ...value, segment: s.key })}
+                className={`flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-3.5 sm:px-4 h-9 rounded-lg text-[13px] font-medium transition-all ${
+                  active ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
+                }`}>
+                <s.icon className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">{s.label}</span>
+              </button>
+            );
+          })}
+        </div>
+        <div className="hidden lg:flex items-center gap-1.5 text-[12px] text-muted-foreground">
+          <span className="w-1.5 h-1.5 rounded-full bg-success animate-pulse" />
+          База обновлена сегодня
+        </div>
       </div>
 
-      <div className="mt-5 grid gap-3 grid-cols-2 lg:grid-cols-5">
+      <div className="mt-6 grid gap-3 grid-cols-2 lg:grid-cols-5">
         <Field label="Тип">
           <Select value={value.type ?? "all"} onValueChange={(v) => set("type", v)}>
-            <SelectTrigger className="h-10"><SelectValue /></SelectTrigger>
+            <SelectTrigger className="h-11 rounded-lg"><SelectValue /></SelectTrigger>
             <SelectContent>
               <SelectItem value="all">Все типы</SelectItem>
               <SelectItem value="квартира">Квартира</SelectItem>
@@ -98,7 +104,7 @@ export default function PropertyFilter({
 
         <Field label="Район">
           <Select value={value.district ?? "all"} onValueChange={(v) => set("district", v)}>
-            <SelectTrigger className="h-10"><SelectValue /></SelectTrigger>
+            <SelectTrigger className="h-11 rounded-lg"><SelectValue /></SelectTrigger>
             <SelectContent>
               <SelectItem value="all">Все районы</SelectItem>
               {DISTRICTS.map(d => <SelectItem key={d} value={d}>{d}</SelectItem>)}
@@ -108,14 +114,14 @@ export default function PropertyFilter({
 
         <Field label="Цена, млн ₽">
           <div className="flex gap-1.5">
-            <Input className="h-10 num" type="number" placeholder="от" value={value.priceMin ?? ""} onChange={e => set("priceMin", e.target.value)} />
-            <Input className="h-10 num" type="number" placeholder="до" value={value.priceMax ?? ""} onChange={e => set("priceMax", e.target.value)} />
+            <Input className="h-11 rounded-lg num" type="number" placeholder="от" value={value.priceMin ?? ""} onChange={e => set("priceMin", e.target.value)} />
+            <Input className="h-11 rounded-lg num" type="number" placeholder="до" value={value.priceMax ?? ""} onChange={e => set("priceMax", e.target.value)} />
           </div>
         </Field>
 
         <Field label="Комнаты">
           <Select value={value.rooms ?? "all"} onValueChange={(v) => set("rooms", v)}>
-            <SelectTrigger className="h-10"><SelectValue /></SelectTrigger>
+            <SelectTrigger className="h-11 rounded-lg"><SelectValue /></SelectTrigger>
             <SelectContent>
               <SelectItem value="all">Любое</SelectItem>
               <SelectItem value="0">Студия</SelectItem>
@@ -129,20 +135,20 @@ export default function PropertyFilter({
 
         <Field label="Площадь, м²">
           <div className="flex gap-1.5">
-            <Input className="h-10 num" type="number" placeholder="от" value={value.areaMin ?? ""} onChange={e => set("areaMin", e.target.value)} />
-            <Input className="h-10 num" type="number" placeholder="до" value={value.areaMax ?? ""} onChange={e => set("areaMax", e.target.value)} />
+            <Input className="h-11 rounded-lg num" type="number" placeholder="от" value={value.areaMin ?? ""} onChange={e => set("areaMin", e.target.value)} />
+            <Input className="h-11 rounded-lg num" type="number" placeholder="до" value={value.areaMax ?? ""} onChange={e => set("areaMax", e.target.value)} />
           </div>
         </Field>
       </div>
 
       {showSubmit && (
-        <div className="mt-5 pt-5 border-t border-border flex flex-col sm:flex-row gap-3 items-center justify-between">
-          <div className="text-sm text-muted-foreground">
-            Найдено <span className="font-semibold text-foreground text-base num">{count}</span> объектов
+        <div className="mt-6 pt-6 border-t border-border flex flex-col sm:flex-row gap-3 items-center justify-between">
+          <div className="text-[13.5px] text-muted-foreground">
+            Найдено <span className="font-semibold text-foreground text-[16px] num">{count}</span> объектов
           </div>
           <div className="flex gap-2 w-full sm:w-auto">
-            <Button variant="ghost" size="sm" onClick={reset} className="gap-1.5 text-muted-foreground"><RotateCcw className="w-3.5 h-3.5" /> Сбросить</Button>
-            <Button className="bg-primary flex-1 sm:flex-none gap-1.5 h-10 px-5" onClick={() => navigate("/catalog")}>
+            <Button variant="ghost" size="sm" onClick={reset} className="gap-1.5 text-muted-foreground h-11 px-4"><RotateCcw className="w-3.5 h-3.5" /> Сбросить</Button>
+            <Button className="bg-primary hover:bg-primary/90 flex-1 sm:flex-none gap-1.5 h-11 px-6 rounded-lg" onClick={() => navigate("/catalog")}>
               <Search className="w-4 h-4" /> Найти объект
             </Button>
           </div>
@@ -154,8 +160,8 @@ export default function PropertyFilter({
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="space-y-1.5">
-      <Label className="text-[10px] font-medium uppercase tracking-[0.12em] text-muted-foreground">{label}</Label>
+    <div className="space-y-2">
+      <Label className="text-[10.5px] font-medium uppercase tracking-[0.14em] text-muted-foreground">{label}</Label>
       {children}
     </div>
   );
