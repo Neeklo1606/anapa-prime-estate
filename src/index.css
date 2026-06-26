@@ -6,74 +6,75 @@
 
 @layer base {
   :root {
-    /* PropTech palette — ЮГАКЦЕНТ · Sea */
-    --background: 200 40% 98%;       /* soft sea mist */
-    --foreground: 215 40% 14%;       /* deep navy ink */
+    /* ЮГАКЦЕНТ · Premium PropTech · Sea-Navy */
+    --background: 0 0% 100%;
+    --foreground: 215 35% 11%;
+
+    --surface-1: 210 25% 98%;        /* very light gray, almost white */
+    --surface-2: 210 20% 96%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 40% 14%;
+    --card-foreground: 215 35% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 40% 14%;
+    --popover-foreground: 215 35% 11%;
 
-    /* Deep sea ink */
-    --primary: 200 70% 38%;          /* ocean teal-blue */
+    /* Deep ocean navy — single accent system */
+    --primary: 212 70% 18%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 200 40% 95%;
-    --secondary-foreground: 215 40% 14%;
+    --secondary: 210 25% 96%;
+    --secondary-foreground: 215 35% 11%;
 
-    --muted: 200 30% 93%;
-    --muted-foreground: 210 18% 45%;
+    --muted: 210 22% 95%;
+    --muted-foreground: 215 14% 42%;
 
-    /* Aqua accent */
-    --accent: 190 75% 48%;           /* fresh aqua */
+    --accent: 206 85% 42%;            /* refined sea blue */
     --accent-foreground: 0 0% 100%;
 
-    --brand: 195 78% 50%;            /* sea cyan */
+    --brand: 206 85% 42%;
     --brand-foreground: 0 0% 100%;
-    --brand-soft: 195 80% 94%;
+    --brand-soft: 206 90% 96%;
 
-    /* Steel */
-    --steel: 200 30% 84%;
-    --steel-foreground: 215 40% 14%;
+    --steel: 215 16% 88%;
+    --steel-foreground: 215 35% 11%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 168 70% 40%;
+    --success: 162 70% 34%;
     --success-foreground: 0 0% 100%;
-    --warning: 38 92% 50%;
+    --warning: 32 95% 50%;
 
-    --border: 200 30% 90%;
-    --input: 200 30% 90%;
-    --ring: 195 78% 50%;
+    --border: 215 20% 92%;
+    --input: 215 20% 92%;
+    --ring: 206 85% 42%;
 
-    --radius: 0.875rem;
+    --radius: 1rem;
 
-    --sidebar-background: 215 45% 12%;
-    --sidebar-foreground: 200 30% 84%;
-    --sidebar-primary: 195 78% 55%;
+    /* Sidebar — same deep navy ink */
+    --sidebar-background: 215 38% 9%;
+    --sidebar-foreground: 210 18% 78%;
+    --sidebar-primary: 206 90% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 40% 17%;
+    --sidebar-accent: 215 32% 14%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 215 40% 19%;
-    --sidebar-ring: 195 78% 55%;
+    --sidebar-border: 215 30% 16%;
+    --sidebar-ring: 206 90% 55%;
 
-    --gradient-hero: radial-gradient(1200px 600px at 20% 0%, hsl(195 78% 50% / 0.10), transparent 60%),
-                     radial-gradient(900px 500px at 90% 20%, hsl(200 70% 38% / 0.08), transparent 60%);
-    --gradient-brand: linear-gradient(135deg, hsl(195 80% 55%) 0%, hsl(205 75% 42%) 100%);
-    --gradient-ink: linear-gradient(180deg, hsl(215 45% 14%) 0%, hsl(215 50% 9%) 100%);
-    --gradient-grid: linear-gradient(hsl(200 30% 90% / 0.6) 1px, transparent 1px),
-                     linear-gradient(90deg, hsl(200 30% 90% / 0.6) 1px, transparent 1px);
+    --gradient-hero: radial-gradient(1200px 700px at 15% -5%, hsl(206 85% 42% / 0.06), transparent 60%),
+                     radial-gradient(800px 500px at 95% 10%, hsl(212 70% 18% / 0.05), transparent 65%);
+    --gradient-brand: linear-gradient(135deg, hsl(206 85% 46%) 0%, hsl(212 75% 28%) 100%);
+    --gradient-ink: linear-gradient(180deg, hsl(215 38% 10%) 0%, hsl(215 45% 6%) 100%);
+    --gradient-grid: linear-gradient(hsl(215 20% 92% / 0.7) 1px, transparent 1px),
+                     linear-gradient(90deg, hsl(215 20% 92% / 0.7) 1px, transparent 1px);
 
-
-    --shadow-xs: 0 1px 2px hsl(222 47% 11% / 0.04);
-    --shadow-sm: 0 1px 2px hsl(222 47% 11% / 0.04), 0 1px 3px hsl(222 47% 11% / 0.06);
-    --shadow-md: 0 4px 12px -2px hsl(222 47% 11% / 0.06), 0 2px 4px hsl(222 47% 11% / 0.04);
-    --shadow-lg: 0 12px 32px -8px hsl(222 47% 11% / 0.12), 0 4px 8px hsl(222 47% 11% / 0.04);
-    --shadow-xl: 0 24px 60px -16px hsl(222 47% 11% / 0.18), 0 8px 16px hsl(222 47% 11% / 0.06);
-    --shadow-ring: 0 0 0 1px hsl(214 32% 91%), 0 1px 2px hsl(222 47% 11% / 0.04);
+    --shadow-xs: 0 1px 2px hsl(215 35% 11% / 0.04);
+    --shadow-sm: 0 1px 2px hsl(215 35% 11% / 0.04), 0 1px 3px hsl(215 35% 11% / 0.05);
+    --shadow-md: 0 6px 18px -4px hsl(215 35% 11% / 0.06), 0 2px 6px hsl(215 35% 11% / 0.04);
+    --shadow-lg: 0 18px 40px -12px hsl(215 35% 11% / 0.12), 0 4px 10px hsl(215 35% 11% / 0.04);
+    --shadow-xl: 0 32px 70px -20px hsl(215 35% 11% / 0.18), 0 10px 24px hsl(215 35% 11% / 0.06);
+    --shadow-ring: 0 0 0 1px hsl(215 20% 92%);
 
     --ease: cubic-bezier(0.22, 1, 0.36, 1);
   }
@@ -81,47 +82,51 @@
 
 @layer base {
   * { @apply border-border; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
     font-feature-settings: "cv11", "ss01", "ss03";
-    letter-spacing: -0.01em;
+    letter-spacing: -0.011em;
   }
   h1, h2, h3, h4, h5 {
     font-family: 'Manrope', 'Inter', ui-sans-serif, system-ui, sans-serif;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.03em;
     font-weight: 600;
   }
+  ::selection { background: hsl(var(--primary) / 0.15); color: hsl(var(--primary)); }
 }
 
 @layer components {
-  .container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+  .container-x { @apply mx-auto w-full max-w-[1320px] px-5 sm:px-8 lg:px-10; }
   .eyebrow {
-    @apply inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground;
+    @apply inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground;
   }
   .chip {
-    @apply inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-2.5 py-1 text-xs font-medium text-foreground/80;
+    @apply inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-[12px] font-medium text-foreground/80;
   }
   .chip-brand {
-    @apply inline-flex items-center gap-1.5 rounded-full bg-[hsl(var(--brand-soft))] text-[hsl(var(--brand))] px-2.5 py-1 text-xs font-medium;
+    @apply inline-flex items-center gap-1.5 rounded-full bg-[hsl(var(--brand-soft))] text-[hsl(var(--brand))] px-3 py-1 text-[12px] font-medium;
   }
   .glass {
-    background: hsl(0 0% 100% / 0.72);
-    backdrop-filter: saturate(180%) blur(16px);
-    -webkit-backdrop-filter: saturate(180%) blur(16px);
+    background: hsl(0 0% 100% / 0.78);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
   }
   .surface {
     @apply rounded-2xl bg-card border border-border;
     box-shadow: var(--shadow-sm);
   }
+  .surface-flat {
+    @apply rounded-2xl bg-card border border-border;
+  }
   .card-premium {
     @apply rounded-2xl bg-card overflow-hidden border border-border;
-    box-shadow: var(--shadow-sm);
-    transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease);
+    box-shadow: var(--shadow-xs);
+    transition: transform .5s var(--ease), box-shadow .5s var(--ease), border-color .35s var(--ease);
   }
   .card-premium:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
     border-color: hsl(var(--steel));
   }
@@ -131,17 +136,25 @@
   }
   .grid-bg {
     background-image: var(--gradient-grid);
-    background-size: 32px 32px;
-    background-position: -1px -1px;
+    background-size: 40px 40px;
   }
   .dot-bg {
-    background-image: radial-gradient(hsl(var(--steel) / 0.6) 1px, transparent 1px);
-    background-size: 18px 18px;
+    background-image: radial-gradient(hsl(var(--steel) / 0.7) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
   .hairline { @apply h-px w-full bg-border; }
   .num {
     font-feature-settings: "tnum", "ss01";
     font-variant-numeric: tabular-nums;
+  }
+  .display-xl {
+    font-family: 'Manrope', 'Inter', sans-serif;
+    letter-spacing: -0.04em;
+    line-height: 0.98;
+    font-weight: 600;
+  }
+  .ring-soft {
+    box-shadow: var(--shadow-ring);
   }
 }
 
