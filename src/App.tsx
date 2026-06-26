@@ -29,6 +29,7 @@ import AdminCRM from "@/pages/admin/AdminCRM";
 import AdminDeals from "@/pages/admin/AdminDeals";
 import AdminKnowledge from "@/pages/admin/AdminKnowledge";
 import AdminFinance from "@/pages/admin/AdminFinance";
+import AdminAppearance from "@/pages/admin/AdminAppearance";
 
 const queryClient = new QueryClient();
 
@@ -65,6 +66,8 @@ const App = () => (
             <Route path="knowledge" element={<AdminKnowledge />} />
             <Route path="finance" element={<AdminFinance />} />
             <Route path="integrations" element={<AdminIntegrations />} />
+            <Route path="appearance" element={<AdminAppearance />} />
+            <Route path="settings/appearance" element={<AdminAppearance />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />

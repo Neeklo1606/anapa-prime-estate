@@ -1,7 +1,7 @@
 import { NavLink, Outlet, Link } from "react-router-dom";
 import {
   LayoutDashboard, Users, Handshake, Home as HomeIcon, Building, Newspaper,
-  Inbox, MessageSquare, Plug, ChevronLeft, LogOut, Sparkles, BookOpen, Wallet, Search, Bell
+  Inbox, MessageSquare, Plug, ChevronLeft, LogOut, Sparkles, BookOpen, Wallet, Search, Bell, Palette
 } from "lucide-react";
 import { useState } from "react";
 import { useStore } from "@/store/useStore";
@@ -38,6 +38,12 @@ const groups: { label: string; items: { to: string; end?: boolean; icon: React.C
       { to: "/admin/knowledge", icon: BookOpen, label: "База знаний" },
       { to: "/admin/finance", icon: Wallet, label: "Финансы" },
       { to: "/admin/integrations", icon: Plug, label: "Интеграции" },
+    ],
+  },
+  {
+    label: "Settings",
+    items: [
+      { to: "/admin/appearance", icon: Palette, label: "Appearance" },
     ],
   },
 ];
