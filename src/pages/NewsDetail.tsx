@@ -39,7 +39,7 @@ export default function NewsDetail() {
             <p className="mt-3 text-muted-foreground">Расскажите о бюджете и цели — пришлём подборку под вас.</p>
           </div>
           <div className="bg-card rounded-xl p-5">
-            <LeadForm variant="inline" />
+            <LeadForm />
           </div>
         </div>
       </div>

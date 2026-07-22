@@ -51,7 +51,7 @@ export default function Contacts() {
         </div>
 
         <div className="card-premium p-7 lg:p-9 h-fit">
-          <LeadForm title="Подберём объект" subtitle="Заполните форму — наш специалист свяжется с вами в течение 15 минут." />
+          <LeadForm />
         </div>
       </div>
     </div>
