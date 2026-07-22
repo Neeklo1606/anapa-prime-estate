@@ -33,7 +33,7 @@ export default function AdminChats() {
               <div className="min-w-0 flex-1">
                 <div className="flex items-center justify-between">
                   <div className="font-medium truncate">{c.client}</div>
-                  {c.unread > 0 && <span className="text-[10px] bg-gold text-gold-foreground rounded-full px-1.5 min-w-[1.1rem] text-center">{c.unread}</span>}
+                  {c.unread > 0 && <span className="text-[10px] bg-brand text-brand-foreground rounded-full px-1.5 min-w-[1.1rem] text-center">{c.unread}</span>}
                 </div>
                 <div className="text-xs text-muted-foreground truncate">{c.property}</div>
                 <div className="text-xs truncate mt-1">{c.lastMessage}</div>

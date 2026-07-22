@@ -49,7 +49,7 @@ export default function PropertyDetail() {
             </div>
             <div className="mt-3 grid grid-cols-4 gap-2">
               {p.photos.map((src, i) => (
-                <button key={i} onClick={() => setPhoto(i)} className={`aspect-[4/3] rounded-lg overflow-hidden border-2 ${i === photo ? "border-gold" : "border-transparent"}`}>
+                <button key={i} onClick={() => setPhoto(i)} className={`aspect-[4/3] rounded-lg overflow-hidden border-2 ${i === photo ? "border-brand" : "border-transparent"}`}>
                   <img src={src} alt="" className="w-full h-full object-cover" />
                 </button>
               ))}
@@ -83,7 +83,7 @@ export default function PropertyDetail() {
                   `Готовность: ${p.deadline}, юридически проверено`,
                   `Отделка: ${p.finishing} — экономия на ремонте`,
                   `Доступна ипотека от 6% (семейная программа)`,
-                ].map(t => <li key={t} className="flex items-start gap-2.5"><Check className="w-5 h-5 text-gold shrink-0 mt-0.5" /><span className="text-sm">{t}</span></li>)}
+                ].map(t => <li key={t} className="flex items-start gap-2.5"><Check className="w-5 h-5 text-brand shrink-0 mt-0.5" /><span className="text-sm">{t}</span></li>)}
               </ul>
             </div>
           </div>
