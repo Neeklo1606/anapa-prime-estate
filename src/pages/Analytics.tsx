@@ -86,7 +86,7 @@ export default function Analytics() {
             <div className="surface p-6">
               <div className="eyebrow"><Building2 className="w-3 h-3" /> Топ-сегмент</div>
               <div className="mt-3 font-display text-2xl font-bold tracking-tight">Апартаменты у моря</div>
-              <p className="mt-2 text-sm text-muted-foreground">Самый ликвидный сегмент: средний срок продажи — 32 дня, доходность аренды 11.2%.</p>
+              <p className="mt-2 text-sm text-muted-foreground">Самый ликвидный сегмент: средний срок продажи · 32 дня, доходность аренды 11.2%.</p>
               <Link to="/catalog" className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[hsl(var(--brand))]">Смотреть объекты →</Link>
             </div>
           </div>

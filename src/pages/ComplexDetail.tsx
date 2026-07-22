@@ -136,7 +136,7 @@ export default function ComplexDetail() {
         {/* Sticky lead */}
         <aside>
           <div className="sticky top-24 card-premium p-6" id="lead">
-            <LeadForm context={c.name} title="Заявка на ЖК" subtitle={`${c.name}, ${c.district}`} />
+            <LeadForm context={c.name} />
           </div>
         </aside>
       </div>

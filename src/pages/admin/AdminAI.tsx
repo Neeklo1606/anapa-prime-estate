@@ -80,7 +80,7 @@ export default function AdminAI() {
             <Zap className="w-5 h-5 text-muted-foreground" />
           </div>
           <div className="mt-3 font-medium text-sm">Создать своего агента</div>
-          <p className="mt-1 text-xs text-muted-foreground max-w-[200px]">Опишите задачу — мы соберём кастомный AI-агент под ваш процесс.</p>
+          <p className="mt-1 text-xs text-muted-foreground max-w-[200px]">Опишите задачу · мы соберём кастомный AI-агент под ваш процесс.</p>
         </div>
       </div>
     </div>

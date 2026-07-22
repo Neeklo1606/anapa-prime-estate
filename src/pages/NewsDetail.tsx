@@ -36,10 +36,10 @@ export default function NewsDetail() {
           <div>
             <div className="eyebrow">Подбор недвижимости</div>
             <h3 className="mt-2 font-display text-3xl">Поможем выбрать объект</h3>
-            <p className="mt-3 text-muted-foreground">Расскажите о бюджете и цели — пришлём подборку под вас.</p>
+            <p className="mt-3 text-muted-foreground">Расскажите о бюджете и цели · пришлём подборку под вас.</p>
           </div>
           <div className="bg-card rounded-xl p-5">
-            <LeadForm variant="inline" />
+            <LeadForm />
           </div>
         </div>
       </div>

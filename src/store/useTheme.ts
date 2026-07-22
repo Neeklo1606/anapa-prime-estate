@@ -200,7 +200,7 @@ export function applyTheme(t: Theme) {
   set("--surface-2", hexToHslTriplet(c.surface));
   set("--steel", hexToHslTriplet(c.border));
 
-  // sidebar — derived from primary
+  // sidebar · derived from primary
   set("--sidebar-background", hexToHslTriplet(shade(c.primary, -0.08)));
   set("--sidebar-foreground", hexToHslTriplet(c.muted));
   set("--sidebar-primary", hexToHslTriplet(c.accent));

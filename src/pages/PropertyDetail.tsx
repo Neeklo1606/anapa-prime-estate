@@ -79,9 +79,9 @@ export default function PropertyDetail() {
               <h2 className="font-display text-2xl">Почему стоит рассмотреть</h2>
               <ul className="mt-4 grid sm:grid-cols-2 gap-3">
                 {[
-                  `Локация: ${p.district} — один из востребованных районов`,
+                  `Локация: ${p.district} · один из востребованных районов`,
                   `Готовность: ${p.deadline}, юридически проверено`,
-                  `Отделка: ${p.finishing} — экономия на ремонте`,
+                  `Отделка: ${p.finishing} · экономия на ремонте`,
                   `Доступна ипотека от 6% (семейная программа)`,
                 ].map(t => <li key={t} className="flex items-start gap-2.5"><Check className="w-5 h-5 text-brand shrink-0 mt-0.5" /><span className="text-sm">{t}</span></li>)}
               </ul>

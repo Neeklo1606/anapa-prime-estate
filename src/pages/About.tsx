@@ -34,8 +34,8 @@ export default function About() {
         <div>
           <div className="eyebrow">Наша история</div>
           <h2 className="mt-2 font-display text-4xl">8 лет на рынке Анапы</h2>
-          <p className="mt-5 text-muted-foreground leading-relaxed">Мы начинали с одного офиса и трёх экспертов. Сегодня «ЮГАКЦЕНТ» — это команда из 18 специалистов, эксклюзивные договоры с 24 застройщиками и более 2300 закрытых сделок.</p>
-          <p className="mt-3 text-muted-foreground leading-relaxed">Мы знаем каждый ЖК Анапы, каждого застройщика и все нюансы — от планировок до особенностей грунтов и розы ветров. Это даёт нашим клиентам уверенность в выборе.</p>
+          <p className="mt-5 text-muted-foreground leading-relaxed">Мы начинали с одного офиса и трёх экспертов. Сегодня «ЮГАКЦЕНТ» · это команда из 18 специалистов, эксклюзивные договоры с 24 застройщиками и более 2300 закрытых сделок.</p>
+          <p className="mt-3 text-muted-foreground leading-relaxed">Мы знаем каждый ЖК Анапы, каждого застройщика и все нюансы · от планировок до особенностей грунтов и розы ветров. Это даёт нашим клиентам уверенность в выборе.</p>
         </div>
         <div className="grid grid-cols-2 gap-4">
           {[{ n: "2017", l: "год основания" }, { n: "2300+", l: "сделок" }, { n: "18", l: "экспертов" }, { n: "24", l: "застройщика" }].map(s => (
@@ -78,7 +78,7 @@ export default function About() {
 
         <div className="mt-12 bg-secondary rounded-2xl p-10 lg:p-14 text-center">
           <h3 className="font-display text-3xl lg:text-4xl">Готовы помочь с подбором</h3>
-          <p className="mt-3 text-muted-foreground max-w-xl mx-auto">Расскажите о задаче — пришлём подборку и сравнительный анализ.</p>
+          <p className="mt-3 text-muted-foreground max-w-xl mx-auto">Расскажите о задаче · пришлём подборку и сравнительный анализ.</p>
           <Button asChild size="lg" className="mt-6 bg-primary"><Link to="/contacts">Связаться с нами</Link></Button>
         </div>
       </section>

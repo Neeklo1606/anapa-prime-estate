@@ -53,7 +53,7 @@ export default function AdminDashboard() {
             {leads.slice(0, 5).map(l => (
               <div key={l.id} className="py-3 flex items-center justify-between gap-3">
                 <div className="min-w-0">
-                  <div className="font-medium truncate">{l.name} — {l.phone}</div>
+                  <div className="font-medium truncate">{l.name} · {l.phone}</div>
                   <div className="text-xs text-muted-foreground truncate">{l.context} · {l.source}</div>
                 </div>
                 <Badge variant="secondary" className="font-normal capitalize">{l.status}</Badge>

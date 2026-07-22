@@ -73,7 +73,7 @@ export default function Catalog() {
       if (t.key === "квартира") c[t.key] = base.filter(p => p.type === "квартира" || p.type === "апартаменты").length;
       else if (t.key === "дом") c[t.key] = base.filter(p => p.type === "дом").length;
       else if (t.key === "коммерция") c[t.key] = base.filter(p => p.type === "коммерция").length;
-      // Синтетические категории — заглушки
+      // Синтетические категории · заглушки
       else if (t.key === "комната") c[t.key] = 45;
       else if (t.key === "дача") c[t.key] = 15;
       else c[t.key] = 0;
@@ -134,7 +134,7 @@ export default function Catalog() {
         </button>
       </div>
 
-      {/* Type tabs — desktop */}
+      {/* Type tabs · desktop */}
       <div className="mt-4 hidden md:flex items-center gap-6 border-b border-border">
         {TYPE_TABS.map(t => {
           const active = typeTab === t.key;
@@ -150,7 +150,7 @@ export default function Catalog() {
         })}
       </div>
 
-      {/* Type tabs — mobile as select */}
+      {/* Type tabs · mobile as select */}
       <div className="mt-4 md:hidden">
         <Select value={typeTab} onValueChange={setTypeTab}>
           <SelectTrigger className="h-11"><SelectValue /></SelectTrigger>
@@ -223,7 +223,7 @@ export default function Catalog() {
           ) : view === "map" ? (
             <div className="rounded-2xl overflow-hidden border border-border bg-card h-[70vh] min-h-[520px] relative">
               <iframe
-                title="Яндекс.Карта — объекты Анапы"
+                title="Яндекс.Карта · объекты Анапы"
                 src="https://yandex.ru/map-widget/v1/?ll=37.316%2C44.894&z=12&l=map"
                 className="w-full h-full border-0"
                 loading="lazy"
@@ -248,8 +248,8 @@ export default function Catalog() {
           )}
 
           <div className="mt-16 prose prose-sm max-w-none text-muted-foreground">
-            <h2 className="font-display text-2xl text-foreground">Недвижимость в Анапе — каталог 2026</h2>
-            <p>В нашем каталоге представлены квартиры, апартаменты и дома в новостройках Анапы и пригородов: Витязево, Джемете, Сукко, Высокий Берег. Мы работаем напрямую с застройщиками — цены те же, но мы помогаем с подбором, ипотекой и сделкой под ключ.</p>
+            <h2 className="font-display text-2xl text-foreground">Недвижимость в Анапе · каталог 2026</h2>
+            <p>В нашем каталоге представлены квартиры, апартаменты и дома в новостройках Анапы и пригородов: Витязево, Джемете, Сукко, Высокий Берег. Мы работаем напрямую с застройщиками · цены те же, но мы помогаем с подбором, ипотекой и сделкой под ключ.</p>
           </div>
         </div>
       </div>

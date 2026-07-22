@@ -6,7 +6,7 @@ export default function Contacts() {
     <div className="container-x py-10 lg:py-14">
       <div className="eyebrow">Контакты</div>
       <h1 className="mt-2 font-display text-4xl lg:text-5xl">Свяжитесь с нами</h1>
-      <p className="mt-3 text-muted-foreground max-w-2xl">Мы на связи каждый день с 9:00 до 21:00. Позвоните, напишите в мессенджер или оставьте заявку — перезвоним за 15 минут.</p>
+      <p className="mt-3 text-muted-foreground max-w-2xl">Мы на связи каждый день с 9:00 до 21:00. Позвоните, напишите в мессенджер или оставьте заявку · перезвоним за 15 минут.</p>
 
       <div className="mt-10 grid lg:grid-cols-2 gap-10">
         <div className="space-y-4">
@@ -15,7 +15,7 @@ export default function Contacts() {
             <div>
               <div className="text-xs uppercase tracking-wider text-muted-foreground">Телефон</div>
               <a href="tel:+78001234567" className="mt-1 block font-display text-2xl hover:text-primary">+7 800 123-45-67</a>
-              <div className="text-sm text-muted-foreground">Ежедневно 9:00 — 21:00</div>
+              <div className="text-sm text-muted-foreground">Ежедневно 9:00 · 21:00</div>
             </div>
           </div>
           <div className="card-premium p-6 flex items-start gap-4">
@@ -51,7 +51,7 @@ export default function Contacts() {
         </div>
 
         <div className="card-premium p-7 lg:p-9 h-fit">
-          <LeadForm title="Подберём объект" subtitle="Заполните форму — наш специалист свяжется с вами в течение 15 минут." />
+          <LeadForm />
         </div>
       </div>
     </div>
