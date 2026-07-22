@@ -142,7 +142,7 @@ export default function Home() {
               <div className="-mt-6">
                 <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/60">О компании</div>
                 <h2 className="mt-4 font-bold text-foreground" style={{ fontSize: "clamp(28px, 3.4vw, 40px)", letterSpacing: "-0.02em", lineHeight: 1.1 }}>
-                  Владислав Югов
+                  Владислав Гончаров
                 </h2>
                 <p className="mt-5 text-foreground/80 leading-relaxed text-[15px]">
                   Мы · команда экспертов, для которых недвижимость Анапы не просто работа, а профессия и стиль жизни. С 2017 года «ЮгАкцент» помогает семьям, инвесторам и предпринимателям находить объекты, в которые хочется вернуться. За каждым положительным отзывом · часы работы: телефонные переговоры, показы, юридические проверки, сопровождение сделки от аванса до ключей.
