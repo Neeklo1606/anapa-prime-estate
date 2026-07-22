@@ -316,6 +316,6 @@ export const useTheme = create<State>()(
         return `:root {\n${lines.join("\n")}\n  --radius: ${t.radius}rem;\n  --font-body: '${t.font}';\n}`;
       },
     }),
-    { name: "ugakcent-theme", version: 2, migrate: () => ({ theme: DEFAULT_THEME, customThemes: [] }) as any },
+    { name: "ugakcent-theme", version: 3, migrate: () => ({ theme: DEFAULT_THEME, customThemes: [] }) as any },
   ),
 );
