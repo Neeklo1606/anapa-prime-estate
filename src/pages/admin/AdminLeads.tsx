@@ -71,9 +71,9 @@ export default function AdminLeads() {
               <div className="mt-6 space-y-5">
                 <Field icon={User} label="Клиент" value={selected.name} />
                 <Field icon={Phone} label="Телефон" value={selected.phone} />
-                <Field icon={Target} label="Бюджет" value={selected.budget ?? "—"} />
-                <Field icon={Target} label="Цель" value={selected.purpose ?? "—"} />
-                <Field icon={MessageCircle} label="Контекст" value={selected.context ?? "—"} />
+                <Field icon={Target} label="Бюджет" value={selected.budget ?? "·"} />
+                <Field icon={Target} label="Цель" value={selected.purpose ?? "·"} />
+                <Field icon={MessageCircle} label="Контекст" value={selected.context ?? "·"} />
                 <Field icon={Calendar} label="Создана" value={formatDate(selected.createdAt)} />
                 {selected.comment && <div><div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Комментарий</div><div className="bg-muted/50 rounded-lg p-3 text-sm">{selected.comment}</div></div>}
                 <div>

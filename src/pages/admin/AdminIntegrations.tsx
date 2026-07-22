@@ -11,7 +11,7 @@ const integrations = [
     status: "ожидает доступы", color: "amber",
     endpoint: "https://api.avito.ru/messenger/v2",
     fields: [{ key: "client_id", label: "Client ID" }, { key: "client_secret", label: "Client Secret" }],
-    lastSync: "—",
+    lastSync: "·",
   },
   {
     name: "TonLab CRM",
@@ -19,7 +19,7 @@ const integrations = [
     status: "ожидает документацию", color: "amber",
     endpoint: "https://tonlab.example/api/v1",
     fields: [{ key: "api_token", label: "API Token" }, { key: "workspace_id", label: "Workspace ID" }],
-    lastSync: "—",
+    lastSync: "·",
   },
   {
     name: "TrendAgent feeds",
@@ -27,14 +27,14 @@ const integrations = [
     status: "ожидает фид", color: "amber",
     endpoint: "https://feeds.trendagent.ru/yug",
     fields: [{ key: "feed_url", label: "Feed URL" }, { key: "feed_key", label: "Feed Key" }],
-    lastSync: "—",
+    lastSync: "·",
   },
 ];
 
 const logs = [
-  { time: "22.06 14:02", text: "Avito API — connection check failed (no credentials)", level: "warn" },
-  { time: "22.06 12:30", text: "TonLab CRM — manual sync attempted, missing token", level: "warn" },
-  { time: "22.06 09:15", text: "TrendAgent — waiting for feed URL", level: "info" },
+  { time: "22.06 14:02", text: "Avito API · connection check failed (no credentials)", level: "warn" },
+  { time: "22.06 12:30", text: "TonLab CRM · manual sync attempted, missing token", level: "warn" },
+  { time: "22.06 09:15", text: "TrendAgent · waiting for feed URL", level: "info" },
   { time: "21.06 18:40", text: "Lead synced manually to Telegram bot", level: "ok" },
 ];
 
@@ -44,7 +44,7 @@ export default function AdminIntegrations() {
       <div>
         <div className="eyebrow">Настройки</div>
         <h1 className="mt-2 font-display text-3xl lg:text-4xl">Интеграции</h1>
-        <p className="mt-2 text-muted-foreground max-w-2xl">Подключение внешних систем: Avito, CRM, фиды застройщиков. Заполните доступы — мы автоматически проверим и активируем интеграцию.</p>
+        <p className="mt-2 text-muted-foreground max-w-2xl">Подключение внешних систем: Avito, CRM, фиды застройщиков. Заполните доступы · мы автоматически проверим и активируем интеграцию.</p>
       </div>
 
       <div className="mt-8 grid lg:grid-cols-3 gap-5">

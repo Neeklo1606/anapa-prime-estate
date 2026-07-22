@@ -116,7 +116,7 @@ export default function AdminAppearance() {
             <PopoverContent align="end" className="w-72 p-2">
               <button className="w-full text-left px-3 py-2 hover:bg-secondary rounded text-[13px]"
                 onClick={() => { downloadFile(`${theme.name}.json`, exportJson()); }}>
-                JSON <span className="text-muted-foreground text-[11px]">— полный объект темы</span>
+                JSON <span className="text-muted-foreground text-[11px]">· полный объект темы</span>
               </button>
               <button className="w-full text-left px-3 py-2 hover:bg-secondary rounded text-[13px]"
                 onClick={() => { downloadFile(`${theme.name}.css`, exportCss()); }}>

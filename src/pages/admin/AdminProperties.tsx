@@ -72,7 +72,7 @@ export default function AdminProperties() {
             {filtered.map(p => (
               <TableRow key={p.id}>
                 <TableCell className="font-medium max-w-xs truncate">{p.title}</TableCell>
-                <TableCell className="text-muted-foreground text-sm">{complexes.find(c => c.id === p.complexId)?.name ?? "—"}</TableCell>
+                <TableCell className="text-muted-foreground text-sm">{complexes.find(c => c.id === p.complexId)?.name ?? "·"}</TableCell>
                 <TableCell>{p.area} м²</TableCell>
                 <TableCell className="font-display">{formatPriceShort(p.price)}</TableCell>
                 <TableCell><Badge variant="secondary" className="font-normal capitalize">{p.status}</Badge></TableCell>
