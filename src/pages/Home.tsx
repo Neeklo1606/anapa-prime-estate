@@ -67,10 +67,21 @@ export default function Home() {
       </section>
 
       {/* NEWS */}
-      <section className="container-x mt-24 mb-24">
+      <section className="container-x mt-24">
         <SectionHeader eyebrow="Журнал" title="Рынок недвижимости Анапы" link={{ to: "/news", label: "Все материалы" }} />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {news.slice(0, 3).map(n => <NewsCard key={n.id} n={n} />)}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="container-x mt-24 mb-24">
+        <div className="mx-auto max-w-[480px] rounded-2xl bg-secondary p-8">
+          <h2 style={{ fontSize: 28, fontWeight: 600, letterSpacing: "-0.015em" }}>Оставьте заявку</h2>
+          <p className="mt-2 text-sm text-muted-foreground">Подберём 3–5 вариантов за 24 часа</p>
+          <div className="mt-6">
+            <LeadForm />
+          </div>
         </div>
       </section>
     </div>
