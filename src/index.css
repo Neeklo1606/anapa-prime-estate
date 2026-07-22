@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    /* Re-Apple · Emerald on cool light grey */
+    /* Re-Apple Emerald */
     --background: 210 20% 98%;
     --foreground: 220 15% 15%;
 
@@ -19,7 +19,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 15% 15%;
 
-    --primary: 172 65% 22%;
+    --primary: 168 55% 20%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 17% 95%;
@@ -28,12 +28,12 @@
     --muted: 210 15% 94%;
     --muted-foreground: 220 10% 50%;
 
-    --accent: 172 65% 22%;
+    --accent: 168 55% 20%;
     --accent-foreground: 0 0% 100%;
 
-    --brand: 172 65% 22%;
+    --brand: 168 55% 20%;
     --brand-foreground: 0 0% 100%;
-    --brand-soft: 172 60% 94%;
+    --brand-soft: 168 50% 93%;
 
     --steel: 220 13% 90%;
     --steel-foreground: 220 15% 15%;
@@ -41,27 +41,26 @@
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 162 65% 34%;
+    --success: 162 60% 32%;
     --success-foreground: 0 0% 100%;
     --warning: 35 90% 50%;
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 172 65% 22%;
+    --ring: 168 55% 20%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 220 20% 10%;
     --sidebar-foreground: 220 10% 78%;
-    --sidebar-primary: 172 65% 42%;
+    --sidebar-primary: 168 55% 40%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 220 18% 15%;
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 172 65% 42%;
+    --sidebar-ring: 168 55% 40%;
 
-    --gradient-hero: none;
-    --gradient-brand: linear-gradient(135deg, hsl(172 65% 28%) 0%, hsl(172 65% 18%) 100%);
+    --gradient-brand: linear-gradient(135deg, hsl(168 55% 26%) 0%, hsl(168 55% 16%) 100%);
     --gradient-ink: linear-gradient(180deg, hsl(220 18% 12%) 0%, hsl(220 20% 8%) 100%);
     --gradient-grid: linear-gradient(hsl(220 13% 91% / 0.6) 1px, transparent 1px),
                      linear-gradient(90deg, hsl(220 13% 91% / 0.6) 1px, transparent 1px);
@@ -89,14 +88,13 @@
     font-family: var(--font-body, 'Inter', ui-sans-serif, system-ui, sans-serif);
     font-size: 15px;
     line-height: 1.5;
-    letter-spacing: var(--letter-spacing, -0.011em);
   }
   h1, h2, h3, h4, h5 {
     font-family: var(--font-display, 'Inter', ui-sans-serif, system-ui, sans-serif);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.015em;
     font-weight: 600;
   }
-  h1 { font-size: 44px; font-weight: 700; line-height: 1.15; }
+  h1 { font-size: 44px; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; }
   h2 { font-size: 32px; font-weight: 600; line-height: 1.25; }
   h3 { font-size: 20px; font-weight: 600; line-height: 1.3; }
   ::selection { background: var(--selection-bg, hsl(var(--primary) / 0.15)); color: var(--selection-fg, hsl(var(--primary))); }
@@ -117,6 +115,7 @@
     background: hsl(0 0% 100% / 0.78);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid hsl(var(--border));
   }
   .surface {
     @apply rounded-2xl bg-card border border-border;
@@ -128,12 +127,11 @@
   .card-premium {
     @apply rounded-2xl bg-card overflow-hidden border border-border;
     box-shadow: var(--shadow-xs);
-    transition: transform .5s var(--ease), box-shadow .5s var(--ease), border-color .35s var(--ease);
+    transition: transform .25s ease-out, box-shadow .25s ease-out;
   }
   .card-premium:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
-    border-color: hsl(var(--steel));
   }
   .btn-grad {
     background: var(--gradient-brand);
@@ -150,13 +148,12 @@
   .hairline { @apply h-px w-full bg-border; }
   .num {
     font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    font-feature-settings: "tnum";
     font-variant-numeric: tabular-nums;
   }
   .display-xl {
     font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
     letter-spacing: -0.02em;
-    line-height: 1.15;
+    line-height: 1.1;
     font-weight: 700;
   }
   .ring-soft {

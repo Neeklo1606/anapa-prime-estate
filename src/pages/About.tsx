@@ -22,7 +22,7 @@ export default function About() {
     <div>
       <section className="relative h-[50vh] min-h-[360px] bg-primary overflow-hidden">
         <img src={hero} alt="" className="absolute inset-0 w-full h-full object-cover opacity-60" />
-        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="absolute inset-0 bg-transparent" />
         <div className="container-x relative h-full flex flex-col justify-end pb-12 text-primary-foreground">
           <div className="eyebrow text-primary-foreground/60">О компании</div>
           <h1 className="mt-2 font-display text-5xl lg:text-7xl leading-tight">ЮГАКЦЕНТ</h1>

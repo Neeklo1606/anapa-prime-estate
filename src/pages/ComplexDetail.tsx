@@ -26,7 +26,7 @@ export default function ComplexDetail() {
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[440px] overflow-hidden bg-primary">
         <img src={c.cover} alt={c.name} className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="absolute inset-0 bg-transparent" />
         <div className="relative h-full container-x flex flex-col justify-end pb-10 lg:pb-14 text-primary-foreground">
           <div className="flex flex-wrap gap-1.5 mb-4">
             {c.badges.map(b => <Badge key={b} className="bg-primary-foreground/15 text-primary-foreground border-0 backdrop-blur-md capitalize font-normal">{b}</Badge>)}

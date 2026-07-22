@@ -47,7 +47,6 @@ export default {
         },
       },
       backgroundImage: {
-        'gradient-hero': 'var(--gradient-hero)',
         'gradient-brand': 'var(--gradient-brand)',
         'gradient-ink': 'var(--gradient-ink)',
       },
