@@ -24,7 +24,7 @@ export default function PropertyDetail() {
     { icon: Layers, label: "Этаж", value: `${p.floor} из ${p.totalFloors}` },
     { icon: Calendar, label: "Сдача", value: p.deadline },
     { icon: Paintbrush, label: "Отделка", value: p.finishing },
-    { icon: MapPin, label: "Район", value: p.district },
+    { icon: MapPin, label: "Город", value: p.district },
   ];
 
   return (
