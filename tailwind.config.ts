@@ -9,7 +9,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-        display: ['Manrope', 'Inter', 'ui-sans-serif', 'system-ui'],
+        display: ['Inter', 'ui-sans-serif', 'system-ui'],
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       colors: {
