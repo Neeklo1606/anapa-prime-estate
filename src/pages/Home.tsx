@@ -27,7 +27,7 @@ export default function Home() {
     <div>
       {/* HERO */}
       <section className="relative overflow-hidden bg-background">
-        <div className="absolute inset-0 bg-gradient-hero pointer-events-none" />
+        <div className="absolute inset-0 bg-transparent pointer-events-none" />
         <div className="container-x relative pt-12 lg:pt-20 pb-24 lg:pb-32">
           <div className="grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-16 items-center">
             <div>
