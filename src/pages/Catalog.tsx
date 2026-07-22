@@ -98,19 +98,16 @@ export default function Catalog() {
   }, [properties, filter, typeTab, sort]);
 
   const paged = filtered.slice(0, page * perPage);
-  const complexCount = new Set(filtered.map(p => p.complexId)).size;
+
 
   return (
     <div className="container-x py-10 lg:py-14">
       {/* Header */}
       <div>
-        <div className="eyebrow">Каталог объектов</div>
-        <h1 className="mt-2 font-display text-4xl lg:text-5xl">Жилые комплексы</h1>
-        <div className="mt-3 text-muted-foreground text-[15px]">
-          <span className="num font-semibold text-foreground">{filtered.length}</span> объектов
-          <span className="mx-2 text-border">·</span>
-          <span className="num font-semibold text-foreground">{complexCount}</span> ЖК
-        </div>
+        <h1 className="display-xl text-[34px] lg:text-[44px]">Каталог недвижимости</h1>
+        <p className="mt-3 text-muted-foreground text-[15px] max-w-2xl">
+          Квартиры, апартаменты и дома от прямых застройщиков
+        </p>
       </div>
 
       {/* Quick tags */}
@@ -217,8 +214,8 @@ export default function Catalog() {
           {filtered.length === 0 ? (
             <div className="card-premium p-12 text-center">
               <div className="font-display text-2xl">Ничего не найдено</div>
-              <p className="mt-2 text-muted-foreground">Попробуйте изменить параметры поиска или сбросьте фильтры.</p>
-              <Button className="mt-5" onClick={() => { setFilter(emptyFilter); setActiveQuick(null); }}>Сбросить фильтры</Button>
+              <p className="mt-2 text-muted-foreground">Попробуйте изменить параметры поиска или сбросьте фильтры</p>
+              <Button variant="outline" className="mt-5" onClick={() => { setFilter(emptyFilter); setActiveQuick(null); setTypeTab("квартира"); }}>Сбросить фильтры</Button>
             </div>
           ) : view === "map" ? (
             <div className="rounded-2xl overflow-hidden border border-border bg-card h-[70vh] min-h-[520px] relative">
