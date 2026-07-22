@@ -5,6 +5,7 @@ import { useStore } from "@/store/useStore";
 import { HERO_IMAGES } from "@/data/mock";
 import ComplexCard from "@/components/cards/ComplexCard";
 import NewsCard from "@/components/cards/NewsCard";
+import LeadForm from "@/components/LeadForm";
 
 export default function Home() {
   const complexes = useStore(s => s.complexes);
