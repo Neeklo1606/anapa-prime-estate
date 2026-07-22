@@ -1,19 +1,18 @@
 import { useMemo } from "react";
 import { useStore } from "@/store/useStore";
-import { DISTRICTS, type PropertyType, type PropertyStatus } from "@/data/mock";
+import { type PropertyType, type PropertyStatus } from "@/data/mock";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
-import { Search, RotateCcw, ShoppingBag, Building2, TrendingUp, Briefcase } from "lucide-react";
 
-export type Segment = "buy" | "new" | "invest" | "commercial";
+export type Segment = "secondary" | "new";
 
 export interface FilterState {
   segment?: Segment;
   type?: PropertyType | "all";
-  district?: string;
+  city?: string;
   complexId?: string;
   rooms?: string;
   priceMin?: string;
@@ -21,14 +20,21 @@ export interface FilterState {
   areaMin?: string;
   areaMax?: string;
   deadline?: string;
+  developer?: string;
   status?: PropertyStatus | "all";
 }
 
-export const matchProperty = (p: ReturnType<typeof useStore.getState>["properties"][number], f: FilterState) => {
-  if (f.segment === "commercial" && p.type !== "коммерция") return false;
+const CITIES = ["Анапа", "Новороссийск", "Краснодар", "Геленджик", "Сочи"];
+const DEVELOPERS = ["ЮгСтрой", "ЧерноморИнвест", "AnapaDev", "СтройГрад", "Марина Групп"];
+
+export const matchProperty = (
+  p: ReturnType<typeof useStore.getState>["properties"][number],
+  f: FilterState
+) => {
   if (f.segment === "new" && p.status === "распродано") return false;
   if (f.type && f.type !== "all" && p.type !== f.type) return false;
-  if (f.district && f.district !== "all" && p.district !== f.district) return false;
+  // City filter (all mock data lives in Анапа)
+  if (f.city && f.city !== "all" && f.city !== "Анапа") return false;
   if (f.complexId && f.complexId !== "all" && p.complexId !== f.complexId) return false;
   if (f.rooms && f.rooms !== "all") {
     if (f.rooms === "4+" ? p.rooms < 4 : String(p.rooms) !== f.rooms) return false;
@@ -42,13 +48,6 @@ export const matchProperty = (p: ReturnType<typeof useStore.getState>["propertie
   return true;
 };
 
-const SEGMENTS: { key: Segment; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
-  { key: "buy", label: "Покупка", icon: ShoppingBag },
-  { key: "new", label: "Новостройки", icon: Building2 },
-  { key: "invest", label: "Инвестиции", icon: TrendingUp },
-  { key: "commercial", label: "Коммерция", icon: Briefcase },
-];
-
 export default function PropertyFilter({
   value, onChange, compact = false, showSubmit = true,
 }: {
@@ -60,68 +59,68 @@ export default function PropertyFilter({
   const navigate = useNavigate();
   const properties = useStore(s => s.properties);
   const count = useMemo(() => properties.filter(p => matchProperty(p, value)).length, [properties, value]);
-  const segment = value.segment ?? "buy";
+  const segment: Segment = value.segment ?? "secondary";
+  const isNew = segment === "new";
   const set = (k: keyof FilterState, v: string) => onChange({ ...value, [k]: v });
-  const reset = () => onChange({});
+  const reset = () => onChange({ segment });
 
   return (
-    <div className={compact ? "" : "rounded-3xl bg-card border border-border p-5 lg:p-7 shadow-xl"}>
-      {/* SEGMENTS */}
-      <div className="flex items-center justify-between gap-3 flex-wrap">
-        <div className="flex items-center gap-1 p-1 bg-[hsl(var(--surface-1))] border border-border rounded-xl w-full sm:w-auto sm:inline-flex">
-          {SEGMENTS.map(s => {
-            const active = segment === s.key;
-            return (
-              <button key={s.key} onClick={() => onChange({ ...value, segment: s.key })}
-                className={`flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-3.5 sm:px-4 h-9 rounded-lg text-[13px] font-medium transition-all ${
-                  active ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
-                }`}>
-                <s.icon className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">{s.label}</span>
-              </button>
-            );
-          })}
-        </div>
-        <div className="hidden lg:flex items-center gap-1.5 text-[12px] text-muted-foreground">
-          <span className="w-1.5 h-1.5 rounded-full bg-success animate-pulse" />
-          База обновлена сегодня
-        </div>
+    <div className={compact ? "" : "rounded-2xl bg-white border border-border p-5 lg:p-7 shadow-md"}>
+      {/* Tabs */}
+      <div className="grid grid-cols-2 gap-2 mb-6">
+        {(["secondary", "new"] as const).map(s => {
+          const active = segment === s;
+          return (
+            <button
+              key={s}
+              onClick={() => onChange({ ...value, segment: s })}
+              className={`h-12 rounded-xl text-[14px] font-medium transition-colors ${
+                active
+                  ? "bg-[hsl(var(--brand))] text-white"
+                  : "bg-secondary text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {s === "secondary" ? "Вторичка" : "Новостройки"}
+            </button>
+          );
+        })}
       </div>
 
-      <div className="mt-6 grid gap-3 grid-cols-2 lg:grid-cols-5">
-        <Field label="Тип">
+      <div className={`grid gap-3 grid-cols-2 ${isNew ? "lg:grid-cols-4" : "lg:grid-cols-5"}`}>
+        <Field label="Тип объекта">
           <Select value={value.type ?? "all"} onValueChange={(v) => set("type", v)}>
-            <SelectTrigger className="h-11 rounded-lg"><SelectValue /></SelectTrigger>
+            <SelectTrigger className="h-10 rounded-lg bg-white"><SelectValue /></SelectTrigger>
             <SelectContent>
               <SelectItem value="all">Все типы</SelectItem>
               <SelectItem value="квартира">Квартира</SelectItem>
               <SelectItem value="апартаменты">Апартаменты</SelectItem>
-              <SelectItem value="дом">Дом</SelectItem>
-              <SelectItem value="коммерция">Коммерция</SelectItem>
+              <SelectItem value="дом">Дома</SelectItem>
+              {isNew && <SelectItem value="инвестиции">Инвестиции</SelectItem>}
+              {isNew && <SelectItem value="коммерция">Коммерция</SelectItem>}
             </SelectContent>
           </Select>
         </Field>
 
-        <Field label="Район">
-          <Select value={value.district ?? "all"} onValueChange={(v) => set("district", v)}>
-            <SelectTrigger className="h-11 rounded-lg"><SelectValue /></SelectTrigger>
+        <Field label="Город">
+          <Select value={value.city ?? "all"} onValueChange={(v) => set("city", v)}>
+            <SelectTrigger className="h-10 rounded-lg bg-white"><SelectValue /></SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">Все районы</SelectItem>
-              {DISTRICTS.map(d => <SelectItem key={d} value={d}>{d}</SelectItem>)}
+              <SelectItem value="all">Все города</SelectItem>
+              {CITIES.map(c => <SelectItem key={c} value={c}>{c}</SelectItem>)}
             </SelectContent>
           </Select>
         </Field>
 
         <Field label="Цена, млн ₽">
           <div className="flex gap-1.5">
-            <Input className="h-11 rounded-lg num" type="number" placeholder="от" value={value.priceMin ?? ""} onChange={e => set("priceMin", e.target.value)} />
-            <Input className="h-11 rounded-lg num" type="number" placeholder="до" value={value.priceMax ?? ""} onChange={e => set("priceMax", e.target.value)} />
+            <Input className="h-10 rounded-lg bg-white num" type="number" placeholder="от" value={value.priceMin ?? ""} onChange={e => set("priceMin", e.target.value)} />
+            <Input className="h-10 rounded-lg bg-white num" type="number" placeholder="до" value={value.priceMax ?? ""} onChange={e => set("priceMax", e.target.value)} />
           </div>
         </Field>
 
         <Field label="Комнаты">
           <Select value={value.rooms ?? "all"} onValueChange={(v) => set("rooms", v)}>
-            <SelectTrigger className="h-11 rounded-lg"><SelectValue /></SelectTrigger>
+            <SelectTrigger className="h-10 rounded-lg bg-white"><SelectValue /></SelectTrigger>
             <SelectContent>
               <SelectItem value="all">Любое</SelectItem>
               <SelectItem value="0">Студия</SelectItem>
@@ -135,10 +134,37 @@ export default function PropertyFilter({
 
         <Field label="Площадь, м²">
           <div className="flex gap-1.5">
-            <Input className="h-11 rounded-lg num" type="number" placeholder="от" value={value.areaMin ?? ""} onChange={e => set("areaMin", e.target.value)} />
-            <Input className="h-11 rounded-lg num" type="number" placeholder="до" value={value.areaMax ?? ""} onChange={e => set("areaMax", e.target.value)} />
+            <Input className="h-10 rounded-lg bg-white num" type="number" placeholder="от" value={value.areaMin ?? ""} onChange={e => set("areaMin", e.target.value)} />
+            <Input className="h-10 rounded-lg bg-white num" type="number" placeholder="до" value={value.areaMax ?? ""} onChange={e => set("areaMax", e.target.value)} />
           </div>
         </Field>
+
+        {isNew && (
+          <Field label="Срок сдачи">
+            <Select value={value.deadline ?? "all"} onValueChange={(v) => set("deadline", v)}>
+              <SelectTrigger className="h-10 rounded-lg bg-white"><SelectValue /></SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Любой</SelectItem>
+                <SelectItem value="2025">2025</SelectItem>
+                <SelectItem value="2026">2026</SelectItem>
+                <SelectItem value="2027">2027</SelectItem>
+                <SelectItem value="сдан">Сдан</SelectItem>
+              </SelectContent>
+            </Select>
+          </Field>
+        )}
+
+        {isNew && (
+          <Field label="Застройщик">
+            <Select value={value.developer ?? "all"} onValueChange={(v) => set("developer", v)}>
+              <SelectTrigger className="h-10 rounded-lg bg-white"><SelectValue /></SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Все</SelectItem>
+                {DEVELOPERS.map(d => <SelectItem key={d} value={d}>{d}</SelectItem>)}
+              </SelectContent>
+            </Select>
+          </Field>
+        )}
       </div>
 
       {showSubmit && (
@@ -146,10 +172,15 @@ export default function PropertyFilter({
           <div className="text-[13.5px] text-muted-foreground">
             Найдено <span className="font-semibold text-foreground text-[16px] num">{count}</span> объектов
           </div>
-          <div className="flex gap-2 w-full sm:w-auto">
-            <Button variant="ghost" size="sm" onClick={reset} className="gap-1.5 text-muted-foreground h-11 px-4"><RotateCcw className="w-3.5 h-3.5" /> Сбросить</Button>
-            <Button className="bg-primary hover:bg-primary/90 flex-1 sm:flex-none gap-1.5 h-11 px-6 rounded-lg" onClick={() => navigate("/catalog")}>
-              <Search className="w-4 h-4" /> Найти объект
+          <div className="flex gap-2 w-full sm:w-auto items-center">
+            <Button variant="ghost" onClick={reset} className="text-muted-foreground hover:text-foreground bg-transparent hover:bg-transparent h-11 px-4">
+              Сбросить
+            </Button>
+            <Button
+              onClick={() => navigate("/catalog")}
+              className="bg-[hsl(var(--brand))] hover:bg-[hsl(var(--brand))]/90 text-white h-11 rounded-xl w-full sm:w-auto px-8"
+            >
+              Найти
             </Button>
           </div>
         </div>
@@ -161,7 +192,7 @@ export default function PropertyFilter({
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="space-y-2">
-      <Label className="text-[10.5px] font-medium uppercase tracking-[0.14em] text-muted-foreground">{label}</Label>
+      <Label className="text-[10.5px] font-medium uppercase tracking-wider text-muted-foreground">{label}</Label>
       {children}
     </div>
   );
