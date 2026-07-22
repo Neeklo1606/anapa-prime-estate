@@ -214,8 +214,8 @@ export default function Catalog() {
           {filtered.length === 0 ? (
             <div className="card-premium p-12 text-center">
               <div className="font-display text-2xl">Ничего не найдено</div>
-              <p className="mt-2 text-muted-foreground">Попробуйте изменить параметры поиска или сбросьте фильтры.</p>
-              <Button className="mt-5" onClick={() => { setFilter(emptyFilter); setActiveQuick(null); }}>Сбросить фильтры</Button>
+              <p className="mt-2 text-muted-foreground">Попробуйте изменить параметры поиска или сбросьте фильтры</p>
+              <Button variant="outline" className="mt-5" onClick={() => { setFilter(emptyFilter); setActiveQuick(null); setTypeTab("квартира"); }}>Сбросить фильтры</Button>
             </div>
           ) : view === "map" ? (
             <div className="rounded-2xl overflow-hidden border border-border bg-card h-[70vh] min-h-[520px] relative">
