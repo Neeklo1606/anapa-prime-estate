@@ -31,8 +31,8 @@ export default {
           soft: "hsl(var(--brand-soft))",
         },
         steel: { DEFAULT: "hsl(var(--steel))", foreground: "hsl(var(--steel-foreground))" },
-        // Back-compat alias used by older components
-        gold: { DEFAULT: "hsl(var(--brand))", foreground: "hsl(var(--brand-foreground))" },
+
+
         popover: { DEFAULT: "hsl(var(--popover))", foreground: "hsl(var(--popover-foreground))" },
         card: { DEFAULT: "hsl(var(--card))", foreground: "hsl(var(--card-foreground))" },
         sidebar: {

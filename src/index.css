@@ -6,78 +6,76 @@
 
 @layer base {
   :root {
-    /* ЮГАКЦЕНТ · Premium PropTech · Sea-Navy */
-    --background: 0 0% 100%;
-    --foreground: 215 35% 11%;
+    /* Re-Apple · Emerald on cool light grey */
+    --background: 210 20% 98%;
+    --foreground: 220 15% 15%;
 
-    --surface-1: 210 25% 98%;        /* very light gray, almost white */
-    --surface-2: 210 20% 96%;
+    --surface-1: 210 17% 95%;
+    --surface-2: 210 15% 94%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 35% 11%;
+    --card-foreground: 220 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 35% 11%;
+    --popover-foreground: 220 15% 15%;
 
-    /* Deep ocean navy — single accent system */
-    --primary: 212 70% 18%;
+    --primary: 172 65% 22%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 25% 96%;
-    --secondary-foreground: 215 35% 11%;
+    --secondary: 210 17% 95%;
+    --secondary-foreground: 220 15% 15%;
 
-    --muted: 210 22% 95%;
-    --muted-foreground: 215 14% 42%;
+    --muted: 210 15% 94%;
+    --muted-foreground: 220 10% 50%;
 
-    --accent: 206 85% 42%;            /* refined sea blue */
+    --accent: 172 65% 22%;
     --accent-foreground: 0 0% 100%;
 
-    --brand: 206 85% 42%;
+    --brand: 172 65% 22%;
     --brand-foreground: 0 0% 100%;
-    --brand-soft: 206 90% 96%;
+    --brand-soft: 172 60% 94%;
 
-    --steel: 215 16% 88%;
-    --steel-foreground: 215 35% 11%;
+    --steel: 220 13% 90%;
+    --steel-foreground: 220 15% 15%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 162 70% 34%;
+    --success: 162 65% 34%;
     --success-foreground: 0 0% 100%;
-    --warning: 32 95% 50%;
+    --warning: 35 90% 50%;
 
-    --border: 215 20% 92%;
-    --input: 215 20% 92%;
-    --ring: 206 85% 42%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 172 65% 22%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
-    /* Sidebar — same deep navy ink */
-    --sidebar-background: 215 38% 9%;
-    --sidebar-foreground: 210 18% 78%;
-    --sidebar-primary: 206 90% 55%;
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 220 10% 78%;
+    --sidebar-primary: 172 65% 42%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 32% 14%;
+    --sidebar-accent: 220 18% 15%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 215 30% 16%;
-    --sidebar-ring: 206 90% 55%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 172 65% 42%;
 
-    --gradient-hero: radial-gradient(1200px 700px at 15% -5%, hsl(206 85% 42% / 0.06), transparent 60%),
-                     radial-gradient(800px 500px at 95% 10%, hsl(212 70% 18% / 0.05), transparent 65%);
-    --gradient-brand: linear-gradient(135deg, hsl(206 85% 46%) 0%, hsl(212 75% 28%) 100%);
-    --gradient-ink: linear-gradient(180deg, hsl(215 38% 10%) 0%, hsl(215 45% 6%) 100%);
-    --gradient-grid: linear-gradient(hsl(215 20% 92% / 0.7) 1px, transparent 1px),
-                     linear-gradient(90deg, hsl(215 20% 92% / 0.7) 1px, transparent 1px);
+    --gradient-hero: none;
+    --gradient-brand: linear-gradient(135deg, hsl(172 65% 28%) 0%, hsl(172 65% 18%) 100%);
+    --gradient-ink: linear-gradient(180deg, hsl(220 18% 12%) 0%, hsl(220 20% 8%) 100%);
+    --gradient-grid: linear-gradient(hsl(220 13% 91% / 0.6) 1px, transparent 1px),
+                     linear-gradient(90deg, hsl(220 13% 91% / 0.6) 1px, transparent 1px);
 
-    --shadow-xs: 0 1px 2px hsl(215 35% 11% / 0.04);
-    --shadow-sm: 0 1px 2px hsl(215 35% 11% / 0.04), 0 1px 3px hsl(215 35% 11% / 0.05);
-    --shadow-md: 0 6px 18px -4px hsl(215 35% 11% / 0.06), 0 2px 6px hsl(215 35% 11% / 0.04);
-    --shadow-lg: 0 18px 40px -12px hsl(215 35% 11% / 0.12), 0 4px 10px hsl(215 35% 11% / 0.04);
-    --shadow-xl: 0 32px 70px -20px hsl(215 35% 11% / 0.18), 0 10px 24px hsl(215 35% 11% / 0.06);
-    --shadow-ring: 0 0 0 1px hsl(215 20% 92%);
+    --shadow-xs: 0 1px 2px hsl(220 15% 15% / 0.04);
+    --shadow-sm: 0 1px 3px hsl(220 15% 15% / 0.04), 0 1px 2px hsl(220 15% 15% / 0.04);
+    --shadow-md: 0 4px 12px -2px hsl(220 15% 15% / 0.06), 0 2px 4px hsl(220 15% 15% / 0.03);
+    --shadow-lg: 0 12px 30px -6px hsl(220 15% 15% / 0.10), 0 4px 8px hsl(220 15% 15% / 0.03);
+    --shadow-xl: 0 24px 50px -12px hsl(220 15% 15% / 0.14), 0 8px 16px hsl(220 15% 15% / 0.04);
+    --shadow-ring: 0 0 0 1px hsl(220 13% 91%);
 
     --ease: cubic-bezier(0.22, 1, 0.36, 1);
   }
+
 }
 
 @layer base {

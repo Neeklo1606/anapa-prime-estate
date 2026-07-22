@@ -30,7 +30,7 @@ export default function ComplexDetail() {
         <div className="relative h-full container-x flex flex-col justify-end pb-10 lg:pb-14 text-primary-foreground">
           <div className="flex flex-wrap gap-1.5 mb-4">
             {c.badges.map(b => <Badge key={b} className="bg-primary-foreground/15 text-primary-foreground border-0 backdrop-blur-md capitalize font-normal">{b}</Badge>)}
-            <Badge className="bg-gold text-gold-foreground border-0 font-normal">{c.class}</Badge>
+            <Badge className="bg-brand text-brand-foreground border-0 font-normal">{c.class}</Badge>
           </div>
           <h1 className="font-display text-5xl lg:text-6xl">{c.name}</h1>
           <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-base text-primary-foreground/85">
@@ -43,7 +43,7 @@ export default function ComplexDetail() {
               <div className="text-xs uppercase tracking-wider text-primary-foreground/60">Цена от</div>
               <div className="font-display text-4xl">{formatPriceShort(c.priceFrom)}</div>
             </div>
-            <Button asChild size="lg" className="bg-gold text-gold-foreground hover:bg-gold/90"><a href="#lead">Оставить заявку</a></Button>
+            <Button asChild size="lg" className="bg-brand text-brand-foreground hover:bg-brand/90"><a href="#lead">Оставить заявку</a></Button>
           </div>
         </div>
       </section>
@@ -74,7 +74,7 @@ export default function ComplexDetail() {
               <h2 className="font-display text-3xl">Преимущества</h2>
               <ul className="mt-5 space-y-3">
                 {c.advantages.map(a => (
-                  <li key={a} className="flex items-start gap-3"><Check className="w-5 h-5 text-gold shrink-0 mt-0.5" /><span>{a}</span></li>
+                  <li key={a} className="flex items-start gap-3"><Check className="w-5 h-5 text-brand shrink-0 mt-0.5" /><span>{a}</span></li>
                 ))}
               </ul>
             </div>
@@ -82,7 +82,7 @@ export default function ComplexDetail() {
               <h2 className="font-display text-3xl">Инфраструктура</h2>
               <ul className="mt-5 space-y-3">
                 {c.infrastructure.map(a => (
-                  <li key={a} className="flex items-start gap-3"><Check className="w-5 h-5 text-gold shrink-0 mt-0.5" /><span>{a}</span></li>
+                  <li key={a} className="flex items-start gap-3"><Check className="w-5 h-5 text-brand shrink-0 mt-0.5" /><span>{a}</span></li>
                 ))}
               </ul>
             </div>
@@ -125,7 +125,7 @@ export default function ComplexDetail() {
             <h2 className="font-display text-3xl">На карте</h2>
             <div className="mt-5 rounded-2xl overflow-hidden bg-secondary h-72 grid place-items-center border border-border/60">
               <div className="text-center text-muted-foreground">
-                <MapPin className="w-10 h-10 mx-auto mb-2 text-gold" />
+                <MapPin className="w-10 h-10 mx-auto mb-2 text-brand" />
                 <div className="font-medium text-foreground">{c.district}, Анапа</div>
                 <div className="text-sm">Карта будет подключена через Яндекс/2GIS API</div>
               </div>

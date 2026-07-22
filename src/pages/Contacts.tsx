@@ -43,7 +43,7 @@ export default function Contacts() {
           </div>
           <div className="rounded-2xl overflow-hidden bg-secondary h-72 grid place-items-center border border-border/60">
             <div className="text-center text-muted-foreground">
-              <MapPin className="w-10 h-10 mx-auto mb-2 text-gold" />
+              <MapPin className="w-10 h-10 mx-auto mb-2 text-brand" />
               <div className="font-medium text-foreground">Карта офиса</div>
               <div className="text-sm">Подключение Яндекс Карт</div>
             </div>
