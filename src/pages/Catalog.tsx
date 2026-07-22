@@ -98,7 +98,7 @@ export default function Catalog() {
   }, [properties, filter, typeTab, sort]);
 
   const paged = filtered.slice(0, page * perPage);
-  const complexCount = new Set(filtered.map(p => p.complexId)).size;
+
 
   return (
     <div className="container-x py-10 lg:py-14">
